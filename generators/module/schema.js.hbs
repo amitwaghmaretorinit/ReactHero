@@ -1,0 +1,9 @@
+import * as Yup from "yup";
+  
+export const validationSchema = Yup.object({
+{{#each schemaData}}
+  {{@key}}:Yup.{{this.type}}(){{#if this.required  }}.required(){{/if}},
+{{/each}}
+ });
+
+

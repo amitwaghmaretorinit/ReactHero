@@ -1,0 +1,46 @@
+ 
+import React from 'react';
+import { useFormik } from 'formik';
+import { Flex } from '@atom/Flex';
+import { Label } from "@atom/FormLable";
+import { Input } from "@atom/Input";
+
+import {validationSchema} from './schema'
+
+export default function {{ properCase name }}() {
+
+  const onSubmit=(values:any)=>{}
+  
+  const formik = useFormik({
+    initialValues: {
+        {{#each schemaData}}
+        {{@key}}:'{{ this.intialValue }}',
+      {{/each}}
+       },
+    validationSchema: validationSchema,
+    onSubmit: (values: any) => onSubmit(values)
+  })
+
+  const {handleChange,values}=formik;
+
+  return (
+      <Flex direction="column">
+               <title>Edit {{properCase name}}</title>
+                       {{#each schemaData}}
+               <Flex direction="column">
+                    <Label text="{{this.label}}" {{#if this.required  }}ismandatory={true}
+                      {{/if}}  />
+                    <Input
+                    id="{{@key}}"
+                    name="{{@key}}"
+                    onChange={handleChange}
+                    value={values.{{{@key}}} }
+                    type={"{{this.inputType}}"}
+                    {{#if this.placeholder}} placeholder="{{this.placeholder}}" {{/if}}
+                    />
+              </Flex>
+               {{/each}}
+      </Flex >
+  )
+};
+ 

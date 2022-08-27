@@ -1,0 +1,29 @@
+import * as Yup from "yup";
+
+export const getColumns=(onAction:(row:any,type:any)=>void)=>{
+ const columns = [
+ {{#each list}}
+  {
+    title: '{{this.title}}',
+    dataIndex: '{{this.key}}',
+    key:  '{{this.key}}',
+    width:'{{this.width}}'
+  },
+{{/each}}
+
+];
+return columns
+}
+
+export const getDummyData=()=>{
+    return new Array(1000).fill('').map((item:any,index)=>{
+         const dummyObject= {  {{#each list}}  
+             {{this.key}}:  "{{this.key}}" + index,
+             {{/each}}
+     }
+ return dummyObject
+    })
+    
+
+    
+}
