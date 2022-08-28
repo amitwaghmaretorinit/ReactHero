@@ -43,7 +43,7 @@ let directoryName = 'react-template';
 switch (commandLineArgs[0]) {
   case 'init':
     shell.exec(
-      `git clone  https://github.com/TorinitTechnologies/RAHR_UserManagement_FrontEnd && cd RAHR_UserManagement_FrontEnd && npm i --force && npm start`,
+      `git clone  https://github.com/amitwaghmaretorinit/react_template && cd react_template && npm i --force && npm start`,
     );
      
     break;
