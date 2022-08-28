@@ -14,31 +14,23 @@ module.exports = {
       message: "What should it be called?",
       default: "Form",
     },
-    {
-      type: "confirm",
-      name: "crud",
-      default: true,
-      message: "Do you want to add CRUD modules?",
-    },
+
     {
       type: "file",
       name: "schema",
-      default: "schema.json",
+      default: false,
       message: "Schema File (schema.json)",
     },
   ],
   actions: (data) => {
-    const rawdata = fs.readFileSync(`${cwd}/${data.schema}`);
-    const parsedData = JSON.parse(rawdata);
-    data.schemaData = parsedData.crud;
-    data.list = parsedData.list;
+    if (data.schema) {
+      const rawdata = fs.readFileSync(`${cwd}/${data.schema}`);
+      const parsedData = JSON.parse(rawdata);
+      data.schemaData = parsedData.crud;
+      data.list = parsedData.list;
+    }
+
     const actions = [
-      {
-        type: "add",
-        path: `${cwd}/{{path}}/{{properCase name}}/schema.ts`,
-        templateFile: "./module/schema.js.hbs",
-        abortOnFail: true,
-      },
       {
         type: "add",
         path: `${cwd}/{{path}}/{{properCase name}}/helper.tsx`,
@@ -53,16 +45,21 @@ module.exports = {
       },
     ];
 
-    if (data.crud) {
+    actions.push({
+      type: "add",
+      path: `${cwd}/{{path}}/{{properCase name}}/AddEdit{{properCase name}}Page.tsx`,
+      templateFile: "./module/edit.js.hbs",
+      abortOnFail: true,
+    });
+    if (data.schema) {
       actions.push({
         type: "add",
-        path: `${cwd}/{{path}}/{{properCase name}}/AddEdit{{properCase name}}Page.tsx`,
-        templateFile: "./module/edit.js.hbs",
+        path: `${cwd}/{{path}}/{{properCase name}}/schema.ts`,
+        templateFile: "./module/schema.js.hbs",
         abortOnFail: true,
       });
     }
 
-    
     actions.push({ type: "prettify", path: `{{path}}/` });
     return actions;
   },

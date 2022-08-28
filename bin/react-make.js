@@ -50,74 +50,15 @@ switch (commandLineArgs[0]) {
   case 'module':
     execShell(plopGen);
     break;
-  case 'gtcom':
+  case 'component':
     execShell([...plopGen, COMPONENT, ..._.drop(commandLineArgs)]);
     break;
-  case 'gtcon':
-    execShell([...plopGen, CONTAINER, ..._.drop(commandLineArgs)]);
-    break;
-  case 'gtf':
-    execShell(['-f', ...plopGen, ..._.drop(commandLineArgs)]);
-    break;
-  case 'gtcomf':
-    execShell(['-f', ...plopGen, COMPONENT, ..._.drop(commandLineArgs)]);
-    break;
-  case 'gtconf':
-    execShell(['-f', ...plopGen, CONTAINER, ..._.drop(commandLineArgs)]);
-    break;
-  case 'g':
-    execShell([...plopGen, ..._.drop(commandLineArgs)]);
-    break;
-  case 'gcom':
-    execShell([...plopGen, COMPONENT, ..._.drop(commandLineArgs)]);
-    break;
-  case 'gcon':
-    execShell([...plopGen, CONTAINER, ..._.drop(commandLineArgs)]);
-    break;
-  case 'gf':
-    execShell(['-f', ...plopGen, ..._.drop(commandLineArgs)]);
-    break;
-  case 'gcomf':
-    execShell(['-f', ...plopGen, COMPONENT, ..._.drop(commandLineArgs)]);
-    break;
-  case 'gconf':
-    execShell(['-f', ...plopGen, CONTAINER, ..._.drop(commandLineArgs)]);
-    break;
-  case 'gtutil':
-    execShell(['-f', ...plopGen, TEST_UTIL, ..._.drop(commandLineArgs)]);
-    break;
-  case 'gloadable':
-    execShell(['-f', ...plopGen, LOADABLE, ..._.drop(commandLineArgs)]);
-    break;
+   
   case '--help':
     shell.echo(
       `Generate tests for existing and new react components\n\n` +
-        `init: Create a new react application\n` +
-        `gt: Creating a test for a container or component\n` +
-        `gtf: Forcefully creating a test for a container or component\n` +
-        `gtcom: Creating a test for an existing component\n` +
-        `gtcomf: Forcefully creating a test for an existing component\n` +
-        `gtcon: Creating a test for an existing container\n` +
-        `gtconf : Forcefully creating a test for an existing component\n` +
-        `g: Creating a container or component\n` +
-        `gf: Forcefully creating a container or component\n` +
-        `gcom: Creating a component\n` +
-        `gcomf: Forcefully creating a component\n` +
-        `gcon: Creating a container\n` +
-        `gconf: Forcefully creating a container\n` +
-        `--all: Adding tests for all existing containers or components.\n` +
-        `gtutil: Create a test util file with some test utility functions.\n` +
-        `gloadable: Create a loadable utility file that uses lazy and Suspense from React to lazyload your containers.\n` +
-        `-------\n\n` +
-        `Creating a test by specifying type, path and name: react-generate gt component src/app Button\n` +
-        `Creating a test for an existing component by specifying path and name: react-generate gtcon src/app Button\n` +
-        `Creating a test for an existing container by specifying path and name: react-generate gtcom src/app HomePage\n` +
-        `Creating a component/container by specifying type, path and name: react-generate g component src/app Button\n` +
-        `Creating a component by specifying path and name: react-generate gcon src/app Button\n` +
-        `Creating a container by specifying path and name: react-generate gcom src/app HomePage\n` +
-        `Generate test for all components in directory: react-generate --all component src/app/components\n` +
-        `Generate test for all containers in directory: react-generate --all containers src/app/containers`,
-    );
+        `init: Create a new react application\n` 
+          );
     break;
   case '--all':
     {

@@ -10,15 +10,12 @@ const shell = require('shelljs');
 const { execSync } = require('child_process');
 const prettier = path.join(__dirname, '../node_modules/.bin/prettier');
 const componentGenerator = require(`./component/${
-  shell.env.GENERATOR_TYPE
+  'new'
 }/index.js`);
 const containerGenerator = require(`./module/${
-  shell.env.GENERATOR_TYPE
+  'new'
 }/index.js`);
-const testUtilGenerator = require(`./testUtil/index.js`);
-const loadableUtilGenerator = require(`./loadable/index.js`);
-const webpackBaseBabelGenerator = require(`./webpack/base/babel/index.js`);
-
+ 
 /**
  * Every generated backup file gets this extension
  * @type {string}
@@ -26,7 +23,8 @@ const webpackBaseBabelGenerator = require(`./webpack/base/babel/index.js`);
 const BACKUPFILE_EXTENSION = 'rbgen';
 
 module.exports = plop => {
-   plop.setGenerator('module', containerGenerator);
+  plop.setGenerator('component', componentGenerator);
+  plop.setGenerator('module', containerGenerator);
  
   plop.addHelper('directory', comp => {
     try {

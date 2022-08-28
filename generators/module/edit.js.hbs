@@ -4,13 +4,16 @@ import { useFormik } from 'formik';
 import { Flex } from '@atom/Flex';
 import { Label } from "@atom/FormLable";
 import { Input } from "@atom/Input";
-
-import {validationSchema} from './schema'
+{{#if schemaData
+ }}
+ import {validationSchema} from './schema'
+{{/if}}
 
 export default function AddEdit{{ properCase name }}() {
 
   const onSubmit=(values:any)=>{}
-  
+  {{#if schemaData
+  }}
   const formik = useFormik({
     initialValues: {
         {{#each schemaData}}
@@ -20,12 +23,18 @@ export default function AddEdit{{ properCase name }}() {
     validationSchema: validationSchema,
     onSubmit: (values: any) => onSubmit(values)
   })
+ 
 
   const {handleChange,values}=formik;
+  {{/if}}
 
   return (
       <Flex direction="column">
                <title>Edit {{properCase name}}</title>
+
+                 {{#if schemaData
+  }}
+
                        {{#each schemaData}}
                <Flex direction="column">
                     <Label text="{{this.label}}" {{#if this.required  }}ismandatory={true}
@@ -40,6 +49,7 @@ export default function AddEdit{{ properCase name }}() {
                     />
               </Flex>
                {{/each}}
+               {{/if}}
       </Flex >
   )
 };
