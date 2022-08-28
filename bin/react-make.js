@@ -32,7 +32,7 @@ if (!commandLineArgs[0]) {
   shell.exec(
     `echo Sorry! react-generate requires an argument to be passed. Run react-generate --help for more details`,
   );
-  return;
+  // return;
 }
 
 // get the type of generator
@@ -126,7 +126,7 @@ switch (commandLineArgs[0]) {
         shell.exec(
           `echo Sorry! react-generate --all requires 2 commandLineArgs to be passed. Run react-generate --help for more details`,
         );
-        return;
+        // return;
       }
       let cwd;
       let directories;
