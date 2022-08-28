@@ -1,18 +1,17 @@
 {
   "name": "react-hero",
-  "version": "1.0.95",
+  "version": "1.0.96",
   "description": "A React component generation library",
   "repository": {
     "type": "git"
-   },
+  },
   "engines": {
     "npm": ">=5",
     "node": ">=8.15.1"
   },
   "author": "Torinit Technologies",
   "license": "MIT",
-  "scripts": {
- },
+  "scripts": {},
   "lint-staged": {
     "*.js": [
       "npm run lint:eslint:fix",
