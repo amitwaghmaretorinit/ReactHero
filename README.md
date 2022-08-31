@@ -14,7 +14,7 @@ align="left"
 
 ## Installation
 
-### Globally install react-generate
+### Globally install react-boss
 
 `npm install -g react-boss`
 
