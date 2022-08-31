@@ -21,11 +21,15 @@ let commandLineArgs = args.toString().split(",");
 const stdioInherit = { stdio: "inherit" };
 
 function execShell(commandArray) {
-  childProcess.execFileSync(
-    path.join(__dirname, "../node_modules/.bin/plop"),
-    commandArray,
-    { ...stdioInherit }
-  );
+   try {
+    childProcess.execFileSync(
+      path.join(__dirname, "../node_modules/.bin/plop"),
+      commandArray,
+      { ...stdioInherit }
+    );
+   } catch (error) {
+     
+   }
 }
 
 // validate input
