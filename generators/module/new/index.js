@@ -18,7 +18,7 @@ module.exports = {
     {
       type: "file",
       name: "schema",
-      default: false,
+      default: 'schema.json',
       message: "Schema File (schema.json)",
     },
   ],

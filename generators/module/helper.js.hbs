@@ -17,7 +17,10 @@ return columns
 
 export const getDummyData=()=>{
     return new Array(1000).fill('').map((item:any,index)=>{
-         const dummyObject= {  {{#each list}}  
+         const dummyObject= {
+           id:Math.random()
+           ,
+             {{#each list}}  
              {{this.key}}:  "{{this.key}}" + index,
              {{/each}}
      }

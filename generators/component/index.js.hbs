@@ -11,12 +11,11 @@ import React from 'react'
 {{/if}}
 // import PropTypes from 'prop-types'
 // import styled from 'styled-components'
-import T from '@components/T';
-
+ 
 export function {{ properCase name }}() {
   return (
     <div data-testid='{{ kebabCase name }}'>
-      <T id={'{{lowerCase name}}'} />
+       {{lowerCase name}}
     </div>
   )
 }

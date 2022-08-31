@@ -1,0 +1,42 @@
+{
+    "crud": {
+      "name": {
+        "type": "string",
+        "label": "Product Name",
+        "required": "true",
+        "placeholder": "Enter your product name",
+        "inputType": "text"
+      },
+      "price": {
+        "type": "number",
+        "label": "Price",
+        "required": "false",
+        "placeholder": "Enter your price",
+        "inputType": "number"
+      },
+      "category": {
+        "type": "string",
+        "label": "Category",
+        "required": "false",
+        "placeholder": "Enter your category",
+        "inputType": "text"
+      },
+      "img": {
+        "type": "string",
+        "label": "Image",
+        "required": "false",
+        "placeholder": "Enter your img url",
+        "inputType": "text"
+      }
+      
+       
+    },
+    "list": {
+      "name": { "width": "40%", "title": "Name" ,"key":"name"},
+      "price": { "width": "20%", "title": "price","key":"price" },
+      "category": { "width": "40%", "title": "Category","key":"category" },
+      "img": { "width": "40%", "title": "Image","key":"img" }
+      
+    }
+  }
+  

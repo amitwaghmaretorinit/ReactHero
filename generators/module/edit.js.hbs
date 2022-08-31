@@ -1,11 +1,11 @@
  
 import React from 'react';
-import { useFormik } from 'formik';
-import { Flex } from '@atom/Flex';
+ import { Flex } from '@atom/Flex';
+ {{#if schemaData
+ }}
 import { Label } from "@atom/FormLable";
 import { Input } from "@atom/Input";
-{{#if schemaData
- }}
+ import { useFormik } from 'formik';
  import {validationSchema} from './schema'
 {{/if}}
 
