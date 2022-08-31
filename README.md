@@ -47,8 +47,7 @@ react-boss init
  - The react-boss module will create a CRUD module for you with validations as you defined in the schema.
 
         ````
-        ``
-        {
+         {
     "crud": {
       "name": {
         "type": "string",
@@ -89,7 +88,7 @@ react-boss init
       
     }
   }
-  ``
+   
         ````
 
 **Creating a component:** `react-boss component`
