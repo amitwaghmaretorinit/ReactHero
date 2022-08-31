@@ -1,8 +1,8 @@
 
-<img 
-align="left"
-  width="480" height="520"
- alt="Screenshot 2022-08-31 at 9 43 31 PM" src="https://user-images.githubusercontent.com/79451605/187727581-25bade2b-8c95-421f-858c-13b73c3f1fee.png"> 
+
+
+   <img  align="left"
+  width="480" height="520" alt="Screenshot 2022-08-31 at 9 49 34 PM" src="https://user-images.githubusercontent.com/79451605/187728806-77f063fc-4f46-4b27-accf-dfaa39c655ba.png">
   ___
 
  
