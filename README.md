@@ -11,7 +11,7 @@
 
    
 <!--   -->
-
+<br/>
 ## Installation
 
 ### Globally install react-boss
