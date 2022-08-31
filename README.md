@@ -40,8 +40,8 @@ react-boss init
  
 ### Generating modules and components
 
-**Creating a module :
-** `react-boss module` 
+**Creating a module :** 
+`react-boss module` 
 
  - The react-boss module requires a schema like below (schema.json). 
  - The react-boss module will create a CRUD module for you with validations as you defined in the schema.
