@@ -1,8 +1,6 @@
 
-
-
-   <img  align="left"
-  width="480" height="520" alt="Screenshot 2022-08-31 at 9 49 34 PM" src="https://user-images.githubusercontent.com/79451605/187728806-77f063fc-4f46-4b27-accf-dfaa39c655ba.png">
+![detective](https://user-images.githubusercontent.com/79451605/187729529-978a6325-d679-4d91-aca7-acef7cd3e72d.png)
+ 
   ___
 
  
