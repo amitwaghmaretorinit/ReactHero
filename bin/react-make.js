@@ -47,9 +47,16 @@ shell.env.GENERATOR_TYPE = _.includes(commandLineArgs[0], "t")
 let directoryName = "react-template";
 switch (commandLineArgs[0]) {
   case "init":
+    console.log(`React Boss : Creating an application into ${commandLineArgs[1] || 'react_template'}...`)
+
     shell.exec(
-      `git clone  https://github.com/amitwaghmaretorinit/react_template && cd react_template && npm i --force && npm start`
+      `git clone  https://github.com/amitwaghmaretorinit/react_template ${commandLineArgs[1] || 'react_template'} --quiet`
     );
+    console.log('React Boss : Installing dependencies...')
+    shell.exec(`cd ${commandLineArgs[1] || 'react_template'} && npm i --force --silent`)
+    console.log('Starting app...')
+    shell.exec(`cd ${commandLineArgs[1] || 'react_template'} && npm start`)
+
 
     break;
   case "module":
