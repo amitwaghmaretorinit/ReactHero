@@ -1,18 +1,26 @@
 
 import React from 'react';
+{{#if list
+}}
 import DataTable from '@atom/DataTable/DataTable';
 import { getColumns, getDummyData } from './helper';
- 
+
+{{/if}}
+
 export default function {{ properCase name }}() {
+  {{#if list}}
   const onAction = (row: any, action: any) => { }
   const cols = getColumns(onAction)
+{{/if}}
   return (
     <div>
       <title>{{properCase name}}</title>
+       {{#if list}}
       <DataTable
         columns={cols}
         dataSource={getDummyData()}
       />
+      {{/if}}
     </div>
   );
 }

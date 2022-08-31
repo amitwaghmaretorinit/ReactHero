@@ -18,12 +18,12 @@ module.exports = {
     {
       type: "file",
       name: "schema",
-      default: 'schema.json',
+      default: "schema.json",
       message: "Schema File (schema.json)",
     },
   ],
   actions: (data) => {
-    if (data.schema) {
+    if (data.schema && fs.existsSync(`${cwd}/${data.schema}`)) {
       const rawdata = fs.readFileSync(`${cwd}/${data.schema}`);
       const parsedData = JSON.parse(rawdata);
       data.schemaData = parsedData.crud;
@@ -31,12 +31,6 @@ module.exports = {
     }
 
     const actions = [
-      {
-        type: "add",
-        path: `${cwd}/{{path}}/{{properCase name}}/helper.tsx`,
-        templateFile: "./module/helper.js.hbs",
-        abortOnFail: true,
-      },
       {
         type: "add",
         path: `${cwd}/{{path}}/{{properCase name}}/index.tsx`,
@@ -51,11 +45,19 @@ module.exports = {
       templateFile: "./module/edit.js.hbs",
       abortOnFail: true,
     });
-    if (data.schema) {
+    if (data.schemaData) {
       actions.push({
         type: "add",
         path: `${cwd}/{{path}}/{{properCase name}}/schema.ts`,
         templateFile: "./module/schema.js.hbs",
+        abortOnFail: true,
+      });
+    }
+    if (data.list) {
+      actions.push({
+        type: "add",
+        path: `${cwd}/{{path}}/{{properCase name}}/helper.tsx`,
+        templateFile: "./module/helper.js.hbs",
         abortOnFail: true,
       });
     }
