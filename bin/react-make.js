@@ -64,7 +64,9 @@ switch (commandLineArgs[0]) {
   case "--help":
     shell.echo(
       `Generate tests for existing and new react components\n\n` +
-        `init: Create a new react application\n`
+        `init: Create a new react application\n`+
+        `module: Create a new CRUD module using schema.json\n`+
+        `component: Create a new Component with or without React.memo`
     );
     break;
   case "--all":
