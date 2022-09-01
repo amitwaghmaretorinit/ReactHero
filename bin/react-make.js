@@ -35,7 +35,7 @@ function execShell(commandArray) {
 // validate input
 if (!commandLineArgs[0]) {
   shell.exec(
-    `echo Sorry! react-generate requires an argument to be passed. Run react-generate --help for more details`
+    `echo Sorry! react-boss requires an argument to be passed. Run react-boss --help for more details`
   );
   // return;
 }
@@ -81,7 +81,7 @@ switch (commandLineArgs[0]) {
       commandLineArgs = _.drop(commandLineArgs);
       if (!commandLineArgs[0] || !commandLineArgs[1] || commandLineArgs[2]) {
         shell.exec(
-          `echo Sorry! react-generate --all requires 2 commandLineArgs to be passed. Run react-generate --help for more details`
+          `echo Sorry! react-boss --all requires 2 commandLineArgs to be passed. Run react-boss --help for more details`
         );
         // return;
       }
