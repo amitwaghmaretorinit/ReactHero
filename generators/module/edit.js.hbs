@@ -37,7 +37,8 @@ export default function AddEdit{{ properCase name }}() {
 
                        {{#each schemaData}}
                <Flex direction="column">
-                    <Label text="{{this.label}}" {{#if this.required  }}ismandatory={true}
+                    <Label text="{{this.label}}" {{#if this.required  }}
+                    isMandatory={true}
                       {{/if}}  />
                     <Input
                     id="{{@key}}"
