@@ -27,6 +27,7 @@ module.exports = plop => {
   plop.setGenerator('module', containerGenerator);
   
   plop.addHelper('curly', (object, open) => (open ? '{' : '}'));
+  plop.addHelper('eq',(a,b)=>a===b)
   plop.setActionType('prettify', answers => {
     const folderPath = `${path.join(
       `${process.cwd()}/`,
